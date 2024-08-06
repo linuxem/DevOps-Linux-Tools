@@ -45,7 +45,15 @@
 
 `sudo apt install gh`
 
+# Install teller, Info @ https://github.com/tellerops/teller
 
+'curl https://github.com/tellerops/teller/releases/download/v2.0.7/teller-x86_64-linux.tar.xz'
+
+'tar xvfz ./teller-x86_64-linux.tar.xz'
+
+# You can use Docker as well 
+
+'docker run --rm -it --env-file <(teller env) alpine sh'
 
 
 
