@@ -1,7 +1,8 @@
 # DevOps-Linux-Tools
 
-# Install eza
+# Install eza info https://eza.rocks/
 
+sudo apt install eza
 
 # Installing zsh  and oh-my-zsh + Powerlevel10k is a theme
 
@@ -17,9 +18,20 @@ source ~/.zshrc
 
 sudo apt install bat
 
+# Installing fzf Info @ https://junegunn.github.io/fzf/
 
-https://nix.dev/
-https://eza.rocks/
+sudo apt install fzf
+
+# Installing fzf-tab 
+
+git clone https://github.com/Aloxaf/fzf-tab ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fzf-tab
+
+# Install devbox info https://nix.dev/ 
+
+curl -fsSL https://get.jetify.com/devbox | bash
+
+
+
 
 
 
