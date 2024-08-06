@@ -1,6 +1,6 @@
 # DevOps-Linux-Tools
 
-# Install eza info https://eza.rocks/
+# Install eza, Info @ https://eza.rocks/
 
 sudo apt install eza
 
@@ -18,7 +18,7 @@ source ~/.zshrc
 
 sudo apt install bat
 
-# Installing fzf Info @ https://junegunn.github.io/fzf/
+# Installing fzf, Info @ https://junegunn.github.io/fzf/
 
 sudo apt install fzf
 
