@@ -1,0 +1,5 @@
+alias python=python3
+alias c=clear
+alias ltr='ls -ltr'  
+alias zshconfig="code ~/.zshrc"
+alias ohmyzsh="code ~/.oh-my-zsh"
