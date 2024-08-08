@@ -31,17 +31,18 @@ COPY motd /home/$USERNAME/motd
 RUN mkdir /home/$USERNAME/.pip
 COPY pip.conf /etc/
 COPY pip.conf /home/$USERNAME/.pip
-RUN wget https://github.com/tellerops/teller/releases/download/v2.0.7/teller-x86_64-linux.tar.xz -O /home/eli/teller-x86_64-linux.tar.xz
-RUN xz -d /home/eli/teller-x86_64-linux.tar.xz 
-RUN tar xvf /home/eli/teller-x86_64-linux.tar -C /home/eli 
-RUN sudo cp /home/eli/teller-x86_64-linux/teller /usr/bin/teller
-RUN  wget http://nz2.archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.1f-1ubuntu2_amd64.deb -O /home/eli/libssl1.1_1.1.1f-1ubuntu2_amd64.deb
-RUN sudo apt-get install /home/eli/libssl1.1_1.1.1f-1ubuntu2_amd64.deb
-RUN wget https://go.dev/dl/go1.22.6.linux-amd64.tar.gz -O /home/eli/go1.22.6.linux-amd64.tar.gz
-RUN sudo tar -xzf /home/eli/go1.22.6.linux-amd64.tar.gz -C /usr/local/
-RUN curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
-RUN rm /home/eli/go1.22.6.linux-amd64.tar.gz /home/eli/teller-x86_64-linux.tar /home/eli/libssl1.1_1.1.1f-1ubuntu2_amd64.deb
-RUN rm -rf /home/eli/teller-x86_64-linux
+RUN wget https://github.com/tellerops/teller/releases/download/v2.0.7/teller-x86_64-linux.tar.xz -O /tmp/teller-x86_64-linux.tar.xz1
+RUN xz -d /tmp/teller-x86_64-linux.tar.xz 
+RUN tar xvf /tmp/teller-x86_64-linux.tar -C /home/eli 
+RUN sudo cp /tmp/teller-x86_64-linux/teller /usr/bin/teller
+RUN  wget http://nz2.archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.1f-1ubuntu2_amd64.deb -O /tmp/libssl1.1_1.1.1f-1ubuntu2_amd64.deb
+RUN sudo apt-get install /tmp/libssl1.1_1.1.1f-1ubuntu2_amd64.deb
+RUN wget https://go.dev/dl/go1.22.6.linux-amd64.tar.gz -O /tmp/go1.22.6.linux-amd64.tar.gz
+RUN sudo tar -xzf /tmp/go1.22.6.linux-amd64.tar.gz -C /usr/local/
+RUN RUN cp zoxide_0.9.4-1_amd64.deb /home/eli/zoxide_0.9.4-1_amd64.deb 
+RUN apt install /home/eli/zoxide_0.9.4-1_amd64.deb -y 
+#RUN rm /home/eli/go1.22.6.linux-amd64.tar.gz /home/eli/teller-x86_64-linux.tar /home/eli/libssl1.1_1.1.1f-1ubuntu2_amd64.deb
+#RUN rm -rf /home/eli/teller-x86_64-linux
 COPY ./.zsh_aliases /home/$USERNAME/ 
 RUN echo 'source  ~/.zsh_aliases' >> /home/$USERNAME/.zshrc
 RUN mkdir ~/.virtualenvs
