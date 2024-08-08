@@ -33,7 +33,7 @@ COPY pip.conf /etc/
 COPY pip.conf /home/$USERNAME/.pip
 RUN wget https://github.com/tellerops/teller/releases/download/v2.0.7/teller-x86_64-linux.tar.xz -O /tmp/teller-x86_64-linux.tar.xz
 RUN xz -d /tmp/teller-x86_64-linux.tar.xz 
-RUN tar xvf /tmp/teller-x86_64-linux.tar -C /home/eli 
+RUN tar xvf /tmp/teller-x86_64-linux.tar -C /tmp/ 
 RUN sudo cp /tmp/teller-x86_64-linux/teller /usr/bin/teller
 RUN  wget http://nz2.archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.1f-1ubuntu2_amd64.deb -O /tmp/libssl1.1_1.1.1f-1ubuntu2_amd64.deb
 RUN sudo apt-get install /tmp/libssl1.1_1.1.1f-1ubuntu2_amd64.deb
