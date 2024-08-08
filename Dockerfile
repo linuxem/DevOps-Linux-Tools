@@ -39,8 +39,8 @@ RUN  wget http://nz2.archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1
 RUN sudo apt-get install /tmp/libssl1.1_1.1.1f-1ubuntu2_amd64.deb
 RUN wget https://go.dev/dl/go1.22.6.linux-amd64.tar.gz -O /tmp/go1.22.6.linux-amd64.tar.gz
 RUN sudo tar -xzf /tmp/go1.22.6.linux-amd64.tar.gz -C /usr/local/
-COPY zoxide_0.9.4-1_amd64.deb /tmp/zoxide_0.9.4-1_amd64.deb 
-RUN sudo apt install /tmp/zoxide_0.9.4-1_amd64.deb -y 
+COPY zoxide_0.9.4-1_amd64.deb /home/eli/zoxide_0.9.4-1_amd64.deb 
+RUN sudo apt install /home/eli/zoxide_0.9.4-1_amd64.deb -y 
 #RUN rm /home/eli/go1.22.6.linux-amd64.tar.gz /home/eli/teller-x86_64-linux.tar /home/eli/libssl1.1_1.1.1f-1ubuntu2_amd64.deb
 #RUN rm -rf /home/eli/teller-x86_64-linux
 COPY ./.zsh_aliases /home/$USERNAME/ 
