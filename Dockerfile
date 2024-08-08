@@ -31,7 +31,7 @@ COPY motd /home/$USERNAME/motd
 RUN mkdir /home/$USERNAME/.pip
 COPY pip.conf /etc/
 COPY pip.conf /home/$USERNAME/.pip
-RUN wget https://github.com/tellerops/teller/releases/download/v2.0.7/teller-x86_64-linux.tar.xz -O /tmp/teller-x86_64-linux.tar.xz1
+RUN wget https://github.com/tellerops/teller/releases/download/v2.0.7/teller-x86_64-linux.tar.xz -O /tmp/teller-x86_64-linux.tar.xz
 RUN xz -d /tmp/teller-x86_64-linux.tar.xz 
 RUN tar xvf /tmp/teller-x86_64-linux.tar -C /home/eli 
 RUN sudo cp /tmp/teller-x86_64-linux/teller /usr/bin/teller
