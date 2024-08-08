@@ -1,5 +1,5 @@
 # This is only used for developing the zsh-in-docker script, but can be used as an example.
-
+#
 FROM ubuntu:24.04
 
 ARG USERNAME=eli 
